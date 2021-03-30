@@ -59,7 +59,7 @@ def test_range3_7():
     assert list(containers.range.range(0,-10,-1)) == list(range(0,-10,-1))
 
 def test_range3_8():
-    asset list(containers.range.range(0,-10,-3)) == list(range(0,-10,-3))
+    assert list(containers.range.range(0,-10,-3)) == list(range(0,-10,-3))
 
 def tests_range3_9():
     assert list(containers.range.range(0,10,-1)) == list(range(0,10,-1))
