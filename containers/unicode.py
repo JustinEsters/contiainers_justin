@@ -1,5 +1,6 @@
 import unicodedata
 
+
 class NormalizedStr:
     '''
     By default, Python's str type stores any valid
@@ -16,7 +17,7 @@ class NormalizedStr:
     but not equal *representationally*.
     In particular, the first is in NFC form,
     and the second is in NFD form.
-    The purpose of this class is to 
+    The purpose of this class is to
     automatically normalize our strings for us,
     making foreign languages "just work" a little bit easier.
     '''
