@@ -113,16 +113,13 @@ class Heap(BinaryTree):
         BST and AVLTree insert functions.
         '''
         if self.root:
-            num = self.__len__()
             insert_path = "{0:b}".format(self.__len__() + 1)[1:]
             self.root = Heap._insert(self.root, value, insert_path)
         else:
             self.root = Node(value)
-        
+
     @staticmethod
     def _insert(node, value, insert_path):
-        lefty = node.left
-        righty = node.right
         if insert_path[0] == '0':
             if not node.left:
                 node.left = Node(value)
@@ -149,11 +146,10 @@ class Heap(BinaryTree):
                 return node
             else:
                 return node
-        
+
     def insert_list(self, xs):
         '''
         Given a list xs, insert each element of xs into self.
-
         FIXME:
         Implement this function.
         '''
@@ -194,7 +190,6 @@ class Heap(BinaryTree):
         if not self.root:
             pass
         else:
-            num = self.__len__()
             remove_path = "{0:b}".format(self.__len__())[1:]
             last_value, self.root = Heap._remove_bottom_right(self.root, remove_path)
             if self.root:
@@ -222,7 +217,7 @@ class Heap(BinaryTree):
                         node.right, remove_path[1:])
         print(removed_value, str(node))
         return removed_value, node
-    
+
     @staticmethod
     def _trickle(node):
         if Heap._is_heap_satisfied(node):
